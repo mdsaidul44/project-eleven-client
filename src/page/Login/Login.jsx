@@ -44,27 +44,13 @@ const Login = () => {
                         <span className='w-5/6 px-4 py-3 font-bold text-white text-center'>
                             Sign in with Google
                         </span>
-                    </div>
-                    <div className='flex cursor-pointer items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg '>
-                        <div className='px-4 py-2'>
-                            <svg className="bg-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="6" height="6">
-                                <path fill="#181717" d="M512 64C264.6 64 64 264.6 64 512c0 224.1 145.6 414 347.7 481.2 25.5 4.7 34.8-11.1 34.8-24.7 0-12.2-.5-52.8-.8-95.7-141.4 30.7-171.2-59.8-171.2-59.8-23.1-58.7-56.5-74.4-56.5-74.4-46.3-31.6 3.5-30.9 3.5-30.9 51.2 3.6 78.2 52.5 78.2 52.5 45.6 78.1 119.6 55.6 149 42.4 4.6-33 17.8-55.6 32.4-68.4-113.5-12.9-232.6-56.8-232.6-253.1 0-55.9 20-101.6 52.5-137.4-5.2-13-22.7-65 4.9-135.6 0 0 42.8-13.8 140.2 52.5a480.4 480.4 0 0 1 252.5 0C690.3 93.6 733 107.4 733 107.4c27.7 70.7 10.2 122.6 5 135.6 32.6 35.8 52.4 81.5 52.4 137.4 0 196.8-119.3 240-232.8 252 18.3 15.9 34.6 47.2 34.6 95.2 0 68.8-.6 124.2-.6 141.2 0 13.7 9.2 29.7 35.2 24.6C816.3 926 961.9 736.1 961.9 512c0-247.4-200.6-448-448-448z" />
-                            </svg>
-
-                        </div>
-
-                        <span className='w-5/6 px-4 py-3 font-bold text-white text-center'>
-                            Sign in with Github
-                        </span>
-                    </div>
+                    </div> 
 
                     <div className='flex items-center justify-between mt-4'>
-                        <span className='w-1/5 border-b  lg:w-1/4'></span>
-
+                        <span className='w-1/5 border-b  lg:w-1/4'></span> 
                         <div className='text-xs text-center text-white uppercase  hover:underline'>
                             or login with email
-                        </div>
-
+                        </div> 
                         <span className='w-1/5 border-b dark:border-gray-400 lg:w-1/4'></span>
                     </div>
                     <form>

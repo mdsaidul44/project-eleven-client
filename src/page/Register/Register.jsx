@@ -1,8 +1,30 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { toast } from "react-toastify";
 
 
 
 const Register = () => {
+    const  {createUser}  = useContext(AuthContext)
+    const handleRegister =async (e)=> {
+        e.preventDefault()
+        const form = e.target;
+        const name = form.name.value;
+        const photo = form.photo.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(name,photo,email,password)
+
+        try{
+            const result = await createUser(email,password)
+            console.log(result)
+            toast.success('signUp successful')
+        }catch(error){
+            console.log(error)
+            toast.error(error?.message)
+        }
+    }
     return (
         <div className="  text-white  rounded-xl " style={{ backgroundImage: 'url(https://i.ibb.co/swvN2dz/best-food-background-0neqcd9ozlv3js9y.jpg)' }}>
             <div className="bg-opacity-60 ">
@@ -18,7 +40,7 @@ const Register = () => {
                     <p className='mt-3 text-xl text-center '>
                         Please Register!
                     </p>
-                    <form>
+                    <form onSubmit={handleRegister}>
                         <div className='mt-4'>
                             <label
                                 className='block mb-2 text-sm font-medium text-white '
@@ -26,8 +48,7 @@ const Register = () => {
                             >
                                 Your Name
                             </label>
-                            <input
-                                id='LoggingEmailAddress'
+                            <input 
                                 placeholder="Name"
                                 name='name'
                                 className='block text-black w-full px-4 py-2 bg-slate-300 border rounded-lg    focus:border-blue-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-blue-300'
@@ -41,8 +62,7 @@ const Register = () => {
                             >
                                 Photo URL
                             </label>
-                            <input
-                                id='LoggingEmailAddress'
+                            <input 
                                 placeholder="Photo Url"
                                 name='photo'
                                 className='block text-black w-full px-4 py-2 bg-slate-300   border rounded-lg    focus:border-blue-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-blue-300'
@@ -56,8 +76,7 @@ const Register = () => {
                             >
                                 Email Address
                             </label>
-                            <input
-                                id='LoggingEmailAddress'
+                            <input 
                                 placeholder="Email"
                                 name='email'
                                 className='block text-black w-full px-4 py-2 bg-slate-300 border rounded-lg    focus:border-blue-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-blue-300'
@@ -75,8 +94,7 @@ const Register = () => {
                                 </label>
                             </div>
 
-                            <input
-                                id='loggingPassword'
+                            <input 
                                 placeholder="Password"
                                 name='password'
                                 className='block w-full px-4 py-2 text-gray-700 bg-slate-300 border rounded-lg    focus:border-blue-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-blue-300'
