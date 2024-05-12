@@ -1,11 +1,21 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { toast } from "react-toastify";
 
 
 const Navbar = () => {
-    const {user} = useContext(AuthContext)
+    const {user,logout} = useContext(AuthContext)
     console.log(user)
+
+    const handleLogout = async() =>{
+        try{
+            await logout()
+            toast.success('User LogOut Successfully')
+        }catch(err){
+            toast.error(err?.message)
+        }
+    }
     return (
         <div>
             <div className="navbar bg-base-100">
@@ -32,8 +42,8 @@ const Navbar = () => {
                 <div className="navbar-end ">
                    <div className="mr-6">
                    {
-                        user ?  <Link><button className="btn">LogOut</button></Link>  : <><Link to='/register'><button className="btn mr-2">Register</button></Link>
-                        <Link to='/login'><button className="btn  ">Login</button></Link></>
+                        user ?  <Link><button  onClick={handleLogout}  className="btn">LogOut</button></Link>  : <><Link to='/register'><button className="btn mr-2">SIGN UP</button></Link>
+                        <Link to='/login'><button className="btn  ">SIGN IN</button></Link></>
                     }
                    </div>
                     {
@@ -41,7 +51,7 @@ const Navbar = () => {
                         <div className="dropdown dropdown-end">
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
-                                <img alt="Tailwind CSS Navbar component" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                <img alt="Tailwind CSS Navbar component" src={user.photoURL} />
                             </div>
                         </div>
                         <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box font-bold w-52">
