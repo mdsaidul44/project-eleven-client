@@ -119,7 +119,7 @@ const Login = () => {
                             to='/register'
                             className='text-xs text-white uppercase  hover:underline'
                         >
-                            or sign up
+                            or Register
                         </Link>
 
                         <span className='w-1/5 border-b  md:w-1/4'></span>
