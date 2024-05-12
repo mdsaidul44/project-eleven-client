@@ -1,5 +1,5 @@
-import Banner from "./Banner";
-import SectionOne from "./ExtraSection/SectionOne";
+import Banner from "../Banner";
+import SectionOne from "../ExtraSection/SectionOne";
 
  
 const Home = () => {
