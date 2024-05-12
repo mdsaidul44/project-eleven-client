@@ -29,10 +29,16 @@ const Navbar = () => {
                         <li><a>Gallery</a></li>
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    <Link to='/register'><button className="btn mr-2">Register</button></Link>
-                    <Link to='/login'><button className="btn mr-2">Login</button></Link>
-                    <div className="dropdown dropdown-end">
+                <div className="navbar-end ">
+                   <div className="mr-6">
+                   {
+                        user ?  <Link><button className="btn">LogOut</button></Link>  : <><Link to='/register'><button className="btn mr-2">Register</button></Link>
+                        <Link to='/login'><button className="btn  ">Login</button></Link></>
+                    }
+                   </div>
+                    {
+                        user && 
+                        <div className="dropdown dropdown-end">
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
                                 <img alt="Tailwind CSS Navbar component" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
@@ -46,6 +52,7 @@ const Navbar = () => {
                             <li><a>My ordered food items</a></li>
                         </ul>
                     </div>
+                    }
                 </div>
             </div>
         </div>
