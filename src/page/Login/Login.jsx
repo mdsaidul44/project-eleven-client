@@ -1,8 +1,26 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { toast } from "react-toastify";
 
 
 
 const Login = () => {
+    const {signInWithGoogle} = useContext(AuthContext)
+    const navigate = useNavigate()
+
+    const handleGoogle = async()=> {
+        try{
+            await signInWithGoogle()
+            toast.success('login successful')
+            navigate('/')
+        }catch(err){
+            console.error(err)
+            toast.error(err?.message)
+        }
+         
+    }
+
     return (
         <div className="  text-white  rounded-xl " style={{ backgroundImage: 'url(https://i.ibb.co/swvN2dz/best-food-background-0neqcd9ozlv3js9y.jpg)' }}>
             <div className="bg-opacity-60 ">
@@ -19,7 +37,7 @@ const Login = () => {
                         Welcome back!
                     </p>
 
-                    <div className='flex cursor-pointer items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg '>
+                    <div onClick={handleGoogle} className='flex cursor-pointer items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg '>
                         <div className='px-4 py-2'>
                             <svg className='w-6 h-6' viewBox='0 0 40 40'>
                                 <path

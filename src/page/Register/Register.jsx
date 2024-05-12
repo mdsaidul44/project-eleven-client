@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
 
@@ -7,6 +7,8 @@ import { toast } from "react-toastify";
 
 const Register = () => {
     const  {createUser}  = useContext(AuthContext)
+    const navigate = useNavigate()
+
     const handleRegister =async (e)=> {
         e.preventDefault()
         const form = e.target;
@@ -20,11 +22,13 @@ const Register = () => {
             const result = await createUser(email,password)
             console.log(result)
             toast.success('signUp successful')
-        }catch(error){
-            console.log(error)
+            navigate('/')
+        }catch(error){ 
             toast.error(error?.message)
+
         }
-    }
+    } 
+    
     return (
         <div className="  text-white  rounded-xl " style={{ backgroundImage: 'url(https://i.ibb.co/swvN2dz/best-food-background-0neqcd9ozlv3js9y.jpg)' }}>
             <div className="bg-opacity-60 ">
