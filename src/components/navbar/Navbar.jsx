@@ -20,7 +20,7 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu font-bold menu-horizontal px-1">
-                        <li><a>Home</a></li>
+                        <Link to='/'><li><a>Home</a></li></Link>
                         <li><a>All Foods</a></li>
                         <li><a>Gallery</a></li>
                     </ul>
