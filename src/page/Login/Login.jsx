@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 
 
 const Login = () => {
-    const {signInWithGoogle} = useContext(AuthContext)
+    const {signInWithGoogle, loginUser} = useContext(AuthContext)
     const navigate = useNavigate()
 
     const handleGoogle = async()=> {
@@ -19,6 +19,23 @@ const Login = () => {
             toast.error(err?.message)
         }
          
+    }
+    
+    const handleLogin =async(e)=>{
+        e.preventDefault()
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email,password)
+
+        try{
+            const userData = await loginUser(email,password)
+            console.log(userData)
+            toast.success('User Login Successfully')
+            navigate('/')
+        }catch(err){
+            toast.error(err?.message)
+        }
     }
 
     return (
@@ -71,7 +88,7 @@ const Login = () => {
                         </div> 
                         <span className='w-1/5 border-b dark:border-gray-400 lg:w-1/4'></span>
                     </div>
-                    <form>
+                    <form onSubmit={handleLogin}>
                         <div className='mt-4'>
                             <label
                                 className='block mb-2 text-sm font-medium text-white '
