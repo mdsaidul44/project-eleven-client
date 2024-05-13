@@ -6,7 +6,7 @@ import TopFood from "../topFood/TopFood";
 const Home = () => {
     return (
         <div>
-           <div className="">
+           <div>
            <Banner/>
            </div>
            <div>

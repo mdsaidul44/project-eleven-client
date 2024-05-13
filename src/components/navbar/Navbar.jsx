@@ -5,8 +5,7 @@ import { toast } from "react-toastify";
 
 
 const Navbar = () => {
-    const { user, logout } = useContext(AuthContext)
-    console.log(user)
+    const { user, logout } = useContext(AuthContext) 
 
     const handleLogout = async () => {
         try {
@@ -18,7 +17,7 @@ const Navbar = () => {
     }
     return (
         <div>
-            <div className="navbar bg-base-100">
+            <div className="navbar bg-base-100 p-5">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -35,7 +34,7 @@ const Navbar = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu font-bold menu-horizontal px-1">
                         <Link to='/'><li><a>Home</a></li></Link>
-                        <li><a>All Foods</a></li>
+                        <Link to='/allfood'><li><a>All Foods</a></li></Link>
                         <li><a>Gallery</a></li>
                     </ul>
                 </div>

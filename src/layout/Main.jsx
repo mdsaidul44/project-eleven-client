@@ -7,10 +7,10 @@ import Navbar from "../components/navbar/Navbar";
 const Main = () => {
     return (
         <div>
-            <div className="mt-5">
+            <div >
                 <Navbar/>
             </div>
-            <div className="lg:m-20">
+            <div className="lg:mx-20 mt-10 mb-20">
                 <Outlet/>
             </div>
             <div>

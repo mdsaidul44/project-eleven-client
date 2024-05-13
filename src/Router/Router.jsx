@@ -6,6 +6,7 @@ import ErrorElement from "../ErrorElement/ErrorElement";
 import Home from "../page/Home/Home";
 import Login from "../page/Login/Login";
 import Register from "../page/Register/Register";
+import AllFood from "../page/AllFood/AllFood";
 
 
   const router = createBrowserRouter([
@@ -25,6 +26,11 @@ import Register from "../page/Register/Register";
         {
           path: '/register',
           element: <Register/>
+        },
+        {
+          path: '/allfood',
+          element: <AllFood/>,
+          loader: ()=> fetch('http://localhost:5000/food')
         }
       ]
     },
