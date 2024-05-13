@@ -10,7 +10,7 @@ const Main = () => {
             <div className="mt-5">
                 <Navbar/>
             </div>
-            <div className="m-20">
+            <div className="lg:m-20">
                 <Outlet/>
             </div>
             <div>

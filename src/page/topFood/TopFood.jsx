@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"; 
 import TopFoodCard from "./TopFoodCard";
 import { GoArrowRight } from "react-icons/go";
+import { Link } from "react-router-dom";
 
 
 
@@ -18,7 +19,7 @@ const TopFood = () => {
                 <h1 className="text-3xl font-bold mt-20 mb-6">Top Foods</h1>
                 <p>The most premium dishes in our restaurant.Which are the top sailings of our restaurant so far. we serve to <br /> serve our highest quality food with our customers in mind.</p>
             </div>
-            <div className="grid grid-cols-3 gap-20 my-20">
+            <div className="grid lg:grid-cols-3 lg:gap-20 space-y-10 my-20">
                 {
                     foods.slice(0,6).map(food =>
                         <TopFoodCard
@@ -28,7 +29,7 @@ const TopFood = () => {
                 }
             </div>
             <div className="text-center">
-                <button className="btn bg-green-800 text-black">See All Food <GoArrowRight className="text-xl"/></button>
+                <Link to='/allfood'><button className="btn bg-green-800 text-black">See All Food <GoArrowRight className="text-xl"/></button></Link>
             </div>
         </div>
     );

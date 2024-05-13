@@ -4,7 +4,7 @@ const Banner = () => {
     return (
         // 
         <div>
-            <div className="carousel h-[600px] w-full rounded-xl">
+            <div className="carousel lg:h-[600px] w-full rounded-xl">
                 <div id="item1" className="carousel-item w-full">
                     <div className="hero  h-full" style={{ backgroundImage: 'url(https://i.ibb.co/4fR8HxV/pasdart-231030-35757-qgr7xtw7d7sj0y6yhw81ac9rud4j9x46orfttfrpts.jpg)' }}>
                         <div className="hero-overlay bg-opacity-60"></div>
