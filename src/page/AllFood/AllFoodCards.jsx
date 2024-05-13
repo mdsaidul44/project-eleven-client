@@ -1,9 +1,11 @@
+import { GoArrowRight } from "react-icons/go";
+import { Link } from "react-router-dom";
 
 
 const AllFoodCards = ({ allFood }) => {
-    const {food_name,food_category,food_img,price}= allFood
+    const {_id,food_name,food_category,food_img,price}= allFood
     return (
-        <div>
+        <div> 
             <div className="card card-side bg-gray-300 shadow-xl">
                 <figure className=""><img className="w-72 h-56 " src={food_img} alt="Movie" /></figure>
                 <div className="card-body">
@@ -11,7 +13,7 @@ const AllFoodCards = ({ allFood }) => {
                     <p className="font-semibold">{food_category}</p>
                     <p ><span className="font-bold">BD :</span><span className="text-green-600 font-semibold">{"$"+price}</span></p>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Watch</button>
+                        <Link to={`/single/${_id}`}><button className="text-green-800 font-bold flex">Details <GoArrowRight className="mt-1.5"/></button></Link>
                     </div>
                 </div>
             </div>

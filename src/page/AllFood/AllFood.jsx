@@ -19,6 +19,10 @@ const AllFood = () => {
             <div>
                 <h1 className="text-3xl font-bold text-green-900 text-center my-20">The Food Library</h1>
             </div>
+            <div className="text-center mb-10">
+                <p className="font-semibold mb-2 text-2xl">Search a food</p>
+                <input type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+            </div>
             <div className="grid grid-cols-2 gap-10">
                 {
                     allFoods.map(allFood => <AllFoodCards
