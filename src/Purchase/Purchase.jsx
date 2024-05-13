@@ -7,8 +7,8 @@ const Purchase = () => {
                 <h1 className="text-2xl text-green-800 font-bold text-center p-4">Order Now</h1>
             </div>
             <form className=" ">
-                <div className="flex p-10">
-                    <div className="w-1/2 mr-4">
+                <div className="lg:flex p-10">
+                    <div className="lg:w-1/2 lg:mr-4">
                         <div className="mb-4">
                             <p className="mb-2">Food Name</p>
                             <input className="w-full p-2 rounded bg-slate-300" placeholder="Food Name" type="text" name="foodName" id="" />
@@ -22,7 +22,7 @@ const Purchase = () => {
                             <input className="w-full p-2 rounded bg-slate-300" placeholder="Quantity" type="text" name="quantity" id="" />
                         </div>
                     </div>
-                    <div className="w-1/2">
+                    <div className="lg:w-1/2">
                         <div className="mb-4">
                         <p className="mb-2">Buyer Name</p>
                             <input className="w-full p-2 rounded bg-slate-300" placeholder="Buyer Name" type="text" name="buyerName" id="" />
