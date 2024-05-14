@@ -1,7 +1,9 @@
 import { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import { GoArrowLeft, GoArrowRight } from "react-icons/go";
+
 
 
 const Purchase = () => {
@@ -17,9 +19,10 @@ const Purchase = () => {
         const quantity = form.quantity.value; 
         const buyerName =form.buyerName.value;
         const email = user?.email;
+        const date = form.date.value;
          
 
-        const order = {foodName:food_name,img:food_img,price:price,email,quantity,buyerName}
+        const order = {foodName:food_name,img:food_img,price:price,email,quantity,buyerName,date}
         console.log(order)
 
         fetch('http://localhost:5000/order',{
@@ -84,6 +87,14 @@ const Purchase = () => {
                     <input className="w-full font-bold p-2 rounded bg-green-700"  type="submit" value="Order Confirm" /> 
                 </div>
             </form>
+            <div className="flex justify-between p-10">
+                <div >
+                   <Link to='/allfood'> <button className="flex btn"><GoArrowLeft className="text-xl mt-1"/>More Buy</button></Link>
+                </div>
+                <div>
+                    <Link  to='/orderfood'><button className="flex btn">My Order Food <GoArrowRight/></button></Link>
+                </div>
+            </div>
         </div>
     );
 };

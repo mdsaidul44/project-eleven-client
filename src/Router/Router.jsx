@@ -52,7 +52,7 @@ import OrderFoodItems from "../FoodItems/OrderFood/OrderFoodItems";
         },
         {
           path: '/orderfood',
-          element: <OrderFoodItems/>
+          element: <OrderFoodItems/> 
         }
       ]
     },
