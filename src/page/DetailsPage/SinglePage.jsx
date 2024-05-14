@@ -1,14 +1,11 @@
-import { Link, useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData} from "react-router-dom";
 import { IoLocationOutline } from "react-icons/io5";
 import { MdOutlineShoppingCart } from "react-icons/md";
 
 
 const SinglePage = () => {
-    const foodDetails = useLoaderData()
-    const { id } = useParams()
-    const details = foodDetails.find(food => food._id === id)
-    const { food_name, food_category, price, food_img, description} = details
-    console.log(details)
+    const foodDetails = useLoaderData() 
+    const {_id, food_name, food_category, price, food_img, description} =  foodDetails
     return (
         <div>
             <div className="lg:flex lg:h-[420px]  rounded-xl p-4 bg-gray-200">
@@ -29,13 +26,13 @@ const SinglePage = () => {
             <div>
                 <div className="lg:hero mt-20 rounded-xl bg-base-300">
                     <div className="lg:hero-content  lg:flex-row-reverse">
-                        <img src={food_img} className="max-w-sm sm:w-[300px] lg:ml-32 rounded-lg shadow-2xl" />
+                        <img src={food_img} className="max-w-sm lg:ml-32 rounded-lg shadow-2xl" />
                         <div>
                             <h1 className="text-4xl font-bold">{food_name}</h1>
                             <h1 className="mt-2 font-semibold">{food_category}</h1>
                             <p className="mt-4">{description}</p>
                             <p className="text-green-600 font-semibold">Price : {'$'+ price}</p>
-                            <Link to={`/purchase`}><button className="flex btn mt-10 text-green-800 font-bold">Buy Now <MdOutlineShoppingCart className="mt-1 text-xl"/></button></Link>
+                            <Link to={`/purchase/${_id}`}><button className="flex btn mt-10 text-green-800 font-bold">Buy Now <MdOutlineShoppingCart className="mt-1 text-xl"/></button></Link>
                         </div>
                     </div>
                 </div>

@@ -9,7 +9,8 @@ import Register from "../page/Register/Register";
 import AllFood from "../page/AllFood/AllFood";
 import SinglePage from "../page/DetailsPage/SinglePage";
 import Purchase from "../Purchase/Purchase";
-import AddFoodItem from "../page/AddFoodItem/AddFoodItem";
+import AddFoodItem from "../FoodItems/AddFoodItem/AddFoodItem";
+import OrderFoodItems from "../FoodItems/OrderFood/OrderFoodItems";
 
 
   const router = createBrowserRouter([
@@ -38,15 +39,20 @@ import AddFoodItem from "../page/AddFoodItem/AddFoodItem";
         {
           path:'/single/:id',
           element: <SinglePage/>,
-          loader: () =>fetch('http://localhost:5000/food')
+          loader: ({params}) =>fetch(`http://localhost:5000/food/${params.id}`)
         },
         {
-          path: '/purchase',
-          element: <Purchase/>
+          path: '/purchase/:id',
+          element: <Purchase/>,
+          loader: ({params}) =>fetch(`http://localhost:5000/food/${params.id}`)
         },
         {
           path: '/addfood',
           element: <AddFoodItem/>
+        },
+        {
+          path: '/orderfood',
+          element: <OrderFoodItems/>
         }
       ]
     },
