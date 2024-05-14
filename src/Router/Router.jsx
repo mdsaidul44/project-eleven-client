@@ -11,6 +11,7 @@ import SinglePage from "../page/DetailsPage/SinglePage";
 import Purchase from "../Purchase/Purchase";
 import AddFoodItem from "../FoodItems/AddFoodItem/AddFoodItem";
 import OrderFoodItems from "../FoodItems/OrderFood/OrderFoodItems";
+import OrderUpdate from "../FoodItems/OrderFood/OrderUpdate/OrderUpdate";
 
 
   const router = createBrowserRouter([
@@ -53,6 +54,11 @@ import OrderFoodItems from "../FoodItems/OrderFood/OrderFoodItems";
         {
           path: '/orderfood',
           element: <OrderFoodItems/> 
+        },
+        {
+          path:'/orderupdate/:id',
+          element: <OrderUpdate/>,
+          loader: ({params})=>fetch(`http://localhost:5000/orderupdate/${params.id}`)
         }
       ]
     },
