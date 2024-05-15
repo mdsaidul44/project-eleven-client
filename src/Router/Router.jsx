@@ -12,6 +12,9 @@ import Purchase from "../Purchase/Purchase";
 import AddFoodItem from "../FoodItems/AddFoodItem/AddFoodItem";
 import OrderFoodItems from "../FoodItems/OrderFood/OrderFoodItems";
 import OrderUpdate from "../FoodItems/OrderFood/OrderUpdate/OrderUpdate";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import GalleryFood from "../page/GalleryFood/GalleryFood"; 
+import AddedFood from "../FoodItems/AddedFood/AddedFood";
 
 
   const router = createBrowserRouter([
@@ -44,7 +47,7 @@ import OrderUpdate from "../FoodItems/OrderFood/OrderUpdate/OrderUpdate";
         },
         {
           path: '/purchase/:id',
-          element: <Purchase/>,
+          element: <PrivateRoute><Purchase/></PrivateRoute>,
           loader: ({params}) =>fetch(`http://localhost:5000/food/${params.id}`)
         },
         {
@@ -59,6 +62,15 @@ import OrderUpdate from "../FoodItems/OrderFood/OrderUpdate/OrderUpdate";
           path:'/orderupdate/:id',
           element: <OrderUpdate/>,
           loader: ({params})=>fetch(`http://localhost:5000/orderupdate/${params.id}`)
+        },
+        {
+          path: '/addfood',
+          element: <GalleryFood/>
+        },
+        {
+          path: 'addedfood',
+          element: <AddedFood/>,
+          loader: ()=> fetch('http://localhost:5000/another')
         }
       ]
     },

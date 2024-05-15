@@ -1,17 +1,59 @@
 import { useEffect } from "react";
+import Swal from "sweetalert2";
 
  
-const AddFoodItem = () => {
+ 
+const AddFoodItem = () => { 
 
+
+    
     useEffect(()=>{
         document.title  = "Home | Add Food "
     },[])
+
+
+    const handleAddFood = e =>{ 
+        e.preventDefault()
+        const form = e.target;
+        const food_name = form.foodName.value;
+        const food_category = form.foodCategory.value;
+        const price = form.price.value;
+        const description = form.description.value;
+        const photo = form.photo.value;
+        const email = form.email.value;
+        const quantity = form.quantity.value;
+        const origin = form.origin.value;
+        const added = {food_name,food_category,price,description,photo,email,quantity,origin}
+        console.log(added)
+
+        // send data to the server side
+        fetch('http://localhost:5000/another', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(added)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if(data.insertedId){
+                    Swal.fire({
+                        title: 'Success',
+                        text: 'Do you want to continue',
+                        icon: 'success',
+                        confirmButtonText: 'Yes'
+                      })
+                }
+            })
+    }
+
     return (
         <div className=" bg-gray-500 rounded-xl shadow-2xl" >
             <div>
                 <h1 className="text-2xl text-green-800 font-bold text-center p-4">Add Now</h1>
             </div>
-            <form className=" ">
+            <form onSubmit={handleAddFood}>
                 <div className="flex p-10">
                     <div className="w-1/2 mr-4">
                         <div className="mb-4">
@@ -20,7 +62,7 @@ const AddFoodItem = () => {
                         </div>
                         <div className="mb-4">
                         <p className="mb-2">Food Category</p>
-                            <input className="w-full p-2 rounded bg-slate-300" placeholder="Food Category" type="text" name="foodcategory" id="" />
+                            <input className="w-full p-2 rounded bg-slate-300" placeholder="Food Category" type="text" name="foodCategory" id="" />
                         </div>
                         <div className="mb-4">
                         <p className="mb-2">Price</p>
@@ -38,15 +80,15 @@ const AddFoodItem = () => {
                         </div>
                         <div className="mb-4">
                         <p className="mb-2">Quantity</p>
-                            <input className="w-full p-2 rounded bg-slate-300" placeholder="Quantity" type="email" name="quantity" id="" />
+                            <input className="w-full p-2 rounded bg-slate-300" placeholder="Quantity" type="text" name="quantity" id="" />
                         </div>
                         <div className="mb-4" >
                         <p className="mb-2">User Email</p>
-                            <input className="w-full p-2  rounded bg-slate-300" placeholder="User Email" type="date" name="date" id="" />
+                            <input className="w-full p-2  rounded bg-slate-300" placeholder='email' type="email" name="email" id="" />
                         </div>
                         <div >
                         <p className="mb-2">Food Origin</p>
-                            <input className="w-full p-2  rounded bg-slate-300" placeholder="Food Origin" type="origin" name="date" id="" />
+                            <input className="w-full p-2  rounded bg-slate-300" placeholder="Food Origin" type="origin" name="origin" id="" />
                         </div>
                     </div>
                 </div>
