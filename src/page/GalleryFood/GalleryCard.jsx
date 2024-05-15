@@ -1,13 +1,17 @@
+import Aos from "aos";
+import { useEffect } from "react";
 
 
 const GalleryCard = ({ food }) => {
     console.log(food)
     const { food_img } = food
 
-    
+    useEffect(()=>{
+        Aos.init()
+    },[])
     return (
         <div>
-            <div className="card w-76 h-60 bg-base-100 shadow-xl image-full">
+            <div   data-aos="fade-up"   data-aos-duration='1000'  className="card w-76 h-60 bg-base-100 shadow-xl image-full">
                 <figure><img className="w-full" src={food_img} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">Shoes!</h2>

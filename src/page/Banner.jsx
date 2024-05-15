@@ -1,17 +1,23 @@
+import Aos from "aos";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Banner = () => {
+
+    useEffect(()=>{
+        Aos.init()
+    },[])
     return (
         // 
         <div>
             <div className="carousel lg:h-[600px] w-full rounded-xl">
                 <div id="item1" className="carousel-item w-full">
-                    <div className="hero  h-full" style={{ backgroundImage: 'url(https://i.ibb.co/4fR8HxV/pasdart-231030-35757-qgr7xtw7d7sj0y6yhw81ac9rud4j9x46orfttfrpts.jpg)' }}>
+                    <div data-aos="flip-up" data-aos-duration="2000" className="hero  h-full" style={{ backgroundImage: 'url(https://i.ibb.co/4fR8HxV/pasdart-231030-35757-qgr7xtw7d7sj0y6yhw81ac9rud4j9x46orfttfrpts.jpg)' }}>
                         <div className="hero-overlay bg-opacity-60"></div>
                         <div className="hero-content text-center text-neutral-content">
                             <div className="max-w-md">
-                                <h1 className="mb-5 text-4xl font-bold">Cranberry juice</h1>
-                                <p className="mb-5">Cranberry juice is a tart and refreshing beverage made from the juice of cranberries, a small, red fruit native to North America.
+                                <h1 data-aos="fade-left" data-aos-duration="2000" className="mb-5 text-4xl font-bold">Cranberry juice</h1>
+                                <p data-aos="fade-right" data-aos-duration='2000' className="mb-5">Cranberry juice is a tart and refreshing beverage made from the juice of cranberries, a small, red fruit native to North America.
                                 </p>
                                 <Link to='/allfood'><button className="btn btn-accent">See All Food</button></Link>
                             </div>

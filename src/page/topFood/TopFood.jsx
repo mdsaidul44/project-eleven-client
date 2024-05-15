@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import TopFoodCard from "./TopFoodCard";
 import { GoArrowRight } from "react-icons/go";
 import { Link } from "react-router-dom";
+import Aos from "aos";
 
 
 
@@ -13,11 +14,15 @@ const TopFood = () => {
             .then(res => res.json())
             .then(data => setFoods(data))
     }, [])
+
+    useEffect(()=>{
+        Aos.init()
+    },[])
     return (
         <div>
             <div className="text-center">
-                <h1 className="text-3xl font-bold mt-20 mb-6">Top Foods</h1>
-                <p>The most premium dishes in our restaurant.Which are the top sailings of our restaurant so far. we serve to <br /> serve our highest quality food with our customers in mind.</p>
+                <h1  data-aos="fade-right"  data-aos-duration="1000" className="text-3xl font-bold mt-20 mb-6">Top Foods</h1>
+                <p  data-aos="fade-left"  data-aos-duration='1000'>The most premium dishes in our restaurant.Which are the top sailings of our restaurant so far. we serve to <br /> serve our highest quality food with our customers in mind.</p>
             </div>
             <div className="grid lg:grid-cols-3 lg:gap-20   my-20">
                 {

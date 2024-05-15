@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { GoArrowRight } from "react-icons/go";
 import { Link } from "react-router-dom";
-
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 const AllFoodCards = ({ allFood }) => {
     const {_id,food_name,food_category,food_img,price}= allFood
@@ -10,9 +11,13 @@ const AllFoodCards = ({ allFood }) => {
         document.title  = "Home | All Food"
     },[])
 
+    useEffect(()=>{
+        Aos.init();
+    },[])
+
     return (
         <div> 
-            <div className="card card-side bg-gray-300 shadow-xl">
+            <div data-aos="fade-up" data-aos-duration="1000" className="card card-side bg-gray-300 shadow-xl">
                 <figure className=""><img className="lg:w-72 w-40 h-56 " src={food_img} alt="Movie" /></figure>
                 <div className="card-body">
                     <h2 className="card-title text-2xl font-bold">{food_name}</h2>
