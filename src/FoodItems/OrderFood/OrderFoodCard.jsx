@@ -1,9 +1,15 @@
+import { useEffect } from "react";
 import { MdDelete } from "react-icons/md";
 import { MdOutlineEdit } from "react-icons/md";
 import { Link } from "react-router-dom";
 
-const OrderFoodCard = ({ order }) => {
+const OrderFoodCard = ({ order }) => { 
     const {_id, foodName, img, price, buyerName, email, date } = order
+
+    useEffect(()=>{
+        document.title  = "Home | Order Items"
+    },[]) 
+
     return (
         <div>
             <div className="card w-[600px] h-36 card-side bg-gray-500 shadow-xl">

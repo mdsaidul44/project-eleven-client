@@ -1,10 +1,15 @@
 import { useLoaderData } from "react-router-dom";
 import AllFoodCards from "./AllFoodCards";
+import { useEffect } from "react";
 
 
 
 const AllFood = () => {
     const allFoods = useLoaderData()
+
+    useEffect(()=>{
+        document.title  = "Home | All Food"
+    },[])
     return (
         <div >
             <div className="hero h-[500px] rounded-xl " style={{ backgroundImage: "url('https://i.ibb.co/5Tmzq8b/pexels-chanwalrus-958545.jpg')" }}>

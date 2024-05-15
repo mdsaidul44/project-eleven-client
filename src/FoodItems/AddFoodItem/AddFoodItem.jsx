@@ -1,5 +1,11 @@
+import { useEffect } from "react";
+
  
 const AddFoodItem = () => {
+
+    useEffect(()=>{
+        document.title  = "Home | Add Food "
+    },[])
     return (
         <div className=" bg-gray-500 rounded-xl shadow-2xl" >
             <div>

@@ -1,9 +1,15 @@
+import { useEffect } from "react";
 import { GoArrowRight } from "react-icons/go";
 import { Link } from "react-router-dom";
 
 
 const AllFoodCards = ({ allFood }) => {
     const {_id,food_name,food_category,food_img,price}= allFood
+
+    useEffect(()=>{
+        document.title  = "Home | All Food"
+    },[])
+
     return (
         <div> 
             <div className="card card-side bg-gray-300 shadow-xl">

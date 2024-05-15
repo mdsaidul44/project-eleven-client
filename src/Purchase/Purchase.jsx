@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
@@ -12,7 +12,9 @@ const Purchase = () => {
     const {user} = useContext(AuthContext)
     console.log(user)
 
-
+    useEffect(()=>{
+        document.title  = "Home | Order Page"
+    },[])
     const handleOrder = event =>{
         event.preventDefault()
         const form = event.target; 

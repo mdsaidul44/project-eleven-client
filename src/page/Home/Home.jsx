@@ -1,9 +1,14 @@
+import { useEffect } from "react";
 import Banner from "../Banner";
 import SectionOne from "../ExtraSection/SectionOne";
 import TopFood from "../topFood/TopFood";
 
  
 const Home = () => {
+
+    useEffect(()=>{
+        document.title  = "Home | Home"
+    },[])
     return (
         <div>
            <div>

@@ -1,4 +1,5 @@
 
+import { useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
 
 
@@ -6,6 +7,11 @@ import { useLoaderData } from "react-router-dom";
 
 
 const OrderUpdate = () => {
+
+    useEffect(()=>{
+        document.title  = "Home | Update Order"
+    },[])
+
     const food = useLoaderData()
     const { foodName, price, img, date, buyerName, email, quantity } = food
     console.log(food)

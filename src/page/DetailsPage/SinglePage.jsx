@@ -1,11 +1,16 @@
 import { Link, useLoaderData} from "react-router-dom";
 import { IoLocationOutline } from "react-icons/io5";
 import { MdOutlineShoppingCart } from "react-icons/md";
+import { useEffect } from "react";
 
 
 const SinglePage = () => {
     const foodDetails = useLoaderData() 
     const {_id, food_name, food_category, price, food_img, description} =  foodDetails
+
+    useEffect(()=>{
+        document.title  = "Home | Food Details"
+    },[])
     return (
         <div>
             <div className="lg:flex lg:h-[420px]  rounded-xl p-4 bg-gray-200">

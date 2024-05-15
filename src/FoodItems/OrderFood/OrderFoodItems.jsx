@@ -8,6 +8,11 @@ import OrderFoodCard from "./OrderFoodCard";
 const OrderFoodItems = () => { 
     const {user} =useContext(AuthContext)
     const [orders,setOrders] = useState([])
+
+    useEffect(()=>{
+        document.title  = "Home | Order Food"
+    },[]) 
+
     console.log(orders)
     useEffect(()=>{
         fetch(`http://localhost:5000/order/${user?.email}`)

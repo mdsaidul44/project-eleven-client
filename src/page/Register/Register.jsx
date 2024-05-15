@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
@@ -8,6 +8,10 @@ import { toast } from "react-toastify";
 const Register = () => {
     const  {createUser}  = useContext(AuthContext)
     const navigate = useNavigate()
+
+    useEffect(()=>{
+        document.title  = "Home | Register"
+    },[])
 
     const handleRegister =async (e)=> {
         e.preventDefault()
