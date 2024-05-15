@@ -1,14 +1,17 @@
 import { useEffect } from "react";
 import { MdDelete } from "react-icons/md";
 import { MdOutlineEdit } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"; 
 
-const OrderFoodCard = ({ order }) => { 
+const OrderFoodCard = ({ order ,handleDelete }) => { 
     const {_id, foodName, img, price, buyerName, email, date } = order
 
     useEffect(()=>{
         document.title  = "Home | Order Items"
     },[]) 
+
+
+  
 
     return (
         <div>
@@ -25,7 +28,7 @@ const OrderFoodCard = ({ order }) => {
                             <div className="ml-36">
                                 <Link to={`/orderupdate/${_id}`}><button ><MdOutlineEdit className="text-2xl text-black" /></button>
                                 </Link>
-                                <button><MdDelete className="text-2xl ml-4 text-red-400" /></button>
+                                <button onClick={() => handleDelete(_id)}><MdDelete className="text-2xl ml-4 text-red-400" /></button>
                             </div>
                             <p className=" mt-6"> Date: {date}</p>
                             <p className="underline">{email}</p>

@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react"; 
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import OrderFoodCard from "./OrderFoodCard";
+import Swal from "sweetalert2";
 
  
 
@@ -19,6 +20,39 @@ const OrderFoodItems = () => {
         .then(res => res.json())
         .then(data=> setOrders(data))
     },[user])
+
+
+    const handleDelete = (id)=>{
+        console.log(id)
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if( result.isConfirmed){
+                fetch(`http://localhost:5000/order/${id}`, {
+                    method: 'DELETE'
+                })
+                .then( res => res.json())
+                .then(data=>{
+                    console.log(data)
+                    if(data.deletedCount>0){
+                        Swal.fire({
+                            title: "Deleted!",
+                            text: "Your Coffee has been deleted.",
+                            icon: "success"
+                        });
+                        const remaining = orders.filter(order => order._id !== id)
+                            setOrders(remaining)
+                    }
+                })
+            }
+        })
+    }
      
     return (
         <div>
@@ -29,6 +63,7 @@ const OrderFoodItems = () => {
             {
                 orders.map(order=> <OrderFoodCard key={order._id}
                     order={order}
+                    handleDelete={handleDelete}
                 />)
              }
             </div>
