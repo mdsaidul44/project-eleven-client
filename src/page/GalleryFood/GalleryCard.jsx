@@ -3,6 +3,8 @@
 const GalleryCard = ({ food }) => {
     console.log(food)
     const { food_img } = food
+
+    
     return (
         <div>
             <div className="card w-76 h-60 bg-base-100 shadow-xl image-full">
