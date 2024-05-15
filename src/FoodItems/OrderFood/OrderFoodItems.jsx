@@ -59,7 +59,7 @@ const OrderFoodItems = () => {
             <div>
                 <h1 className="text-3xl font-bold text-center my-10">My Order Collection</h1>
             </div>
-            <div className="grid grid-cols-2 gap-10">
+            <div className="grid lg:grid-cols-2 lg:gap-10">
             {
                 orders.map(order=> <OrderFoodCard key={order._id}
                     order={order}

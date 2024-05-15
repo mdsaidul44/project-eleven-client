@@ -15,17 +15,17 @@ const OrderFoodCard = ({ order ,handleDelete }) => {
 
     return (
         <div>
-            <div className="card w-[600px] h-36 card-side bg-gray-500 shadow-xl">
-                <figure><img className="w-44 h-full" src={img} alt="Movie" /></figure>
+            <div className="card lg:w-[600px] h-36 card-side bg-gray-500 shadow-xl">
+                <figure><img className="lg:w-44 h-full" src={img} alt="Movie" /></figure>
                 <div className="card-body text-indigo-100">
-                    <div className="flex justify-between">
+                    <div className="lg:flex justify-between">
                         <div>
                             <h2 className="card-title">{foodName}</h2>
                             <p>{buyerName}</p>
                             <p className="text-green-400">{"$" + price}</p>
                         </div>
                         <div>
-                            <div className="ml-36">
+                            <div className="lg:ml-36">
                                 <Link to={`/orderupdate/${_id}`}><button ><MdOutlineEdit className="text-2xl text-black" /></button>
                                 </Link>
                                 <button onClick={() => handleDelete(_id)}><MdDelete className="text-2xl ml-4 text-red-400" /></button>
