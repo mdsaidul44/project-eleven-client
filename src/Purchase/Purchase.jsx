@@ -54,7 +54,7 @@ const Purchase = () => {
             <div>
                 <h1 className="text-2xl text-green-800 font-bold text-center p-4">Order Now</h1>
             </div>
-            <form onSubmit={handleOrder} className=" ">
+            <form onSubmit={handleOrder}>
                 <div className="lg:flex p-10">
                     <div className="lg:w-1/2 lg:mr-4">
                         <div className="mb-4">
