@@ -64,8 +64,9 @@ import AddedFood from "../FoodItems/AddedFood/AddedFood";
           loader: ({params})=>fetch(`http://localhost:5000/orderupdate/${params.id}`)
         },
         {
-          path: '/addfood',
-          element: <GalleryFood/>
+          path: '/gallery',
+          element: <GalleryFood/>,
+          loader: ()=> fetch('http://localhost:5000/food')
         },
         {
           path: 'addedfood',
