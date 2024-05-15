@@ -38,17 +38,17 @@ import AddedFood from "../FoodItems/AddedFood/AddedFood";
         {
           path: '/allfood',
           element: <AllFood/>,
-          loader: ()=> fetch('http://localhost:5000/food')
+          loader: ()=> fetch('https://my-assignment-eleven-server-inky.vercel.app/food')
         },
         {
           path:'/single/:id',
           element: <SinglePage/>,
-          loader: ({params}) =>fetch(`http://localhost:5000/food/${params.id}`)
+          loader: ({params}) =>fetch(`https://my-assignment-eleven-server-inky.vercel.app/food/${params.id}`)
         },
         {
           path: '/purchase/:id',
           element: <PrivateRoute><Purchase/></PrivateRoute>,
-          loader: ({params}) =>fetch(`http://localhost:5000/food/${params.id}`)
+          loader: ({params}) =>fetch(`https://my-assignment-eleven-server-inky.vercel.app/food/${params.id}`)
         },
         {
           path: '/addfood',
@@ -61,17 +61,17 @@ import AddedFood from "../FoodItems/AddedFood/AddedFood";
         {
           path:'/orderupdate/:id',
           element: <OrderUpdate/>,
-          loader: ({params})=>fetch(`http://localhost:5000/orderupdate/${params.id}`)
+          loader: ({params})=>fetch(`https://my-assignment-eleven-server-inky.vercel.app/orderupdate/${params.id}`)
         },
         {
           path: '/gallery',
           element: <GalleryFood/>,
-          loader: ()=> fetch('http://localhost:5000/food')
+          loader: ()=> fetch('https://my-assignment-eleven-server-inky.vercel.app/food')
         },
         {
           path: 'addedfood',
           element: <AddedFood/>,
-          loader: ()=> fetch('http://localhost:5000/another')
+          loader: ()=> fetch('https://my-assignment-eleven-server-inky.vercel.app/another')
         }
       ]
     },

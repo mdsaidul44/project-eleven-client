@@ -10,7 +10,7 @@ import Swal from "sweetalert2";
 const OrderUpdate = () => {
     const food = useLoaderData()
     const { _id,foodName, price, img, date, buyerName,quantity } = food
-    console.log(food)
+    // console.log(food)
 
     useEffect(()=>{
         document.title  = "Home | Update Order"
@@ -25,11 +25,11 @@ const OrderUpdate = () => {
         const buyerName = form.buyerName.value; 
         const date = form.date.value;
         const img = form.img.value;
-        console.log(foodName,price,quantity,buyerName,date,img)
+        // console.log(foodName,price,quantity,buyerName,date,img)
         const updateOrder ={foodName,price,quantity,buyerName,date,img,}
-        console.log(updateOrder)
+        // console.log(updateOrder)
 
-        fetch(`http://localhost:5000/orderupdate/${_id}`, {
+        fetch(`https://my-assignment-eleven-server-inky.vercel.app/orderupdate/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

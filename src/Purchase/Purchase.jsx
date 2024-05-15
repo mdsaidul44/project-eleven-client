@@ -10,7 +10,7 @@ const Purchase = () => {
     const food = useLoaderData()
     const {food_name,price,food_img} = food; 
     const {user} = useContext(AuthContext)
-    console.log(user)
+    // console.log(user)
 
     useEffect(()=>{
         document.title  = "Home | Order Page"
@@ -25,9 +25,9 @@ const Purchase = () => {
          
 
         const order = {foodName:food_name,img:food_img,price:price,email,quantity,buyerName,date}
-        console.log(order)
+        // console.log(order)
 
-        fetch('http://localhost:5000/order',{
+        fetch('https://my-assignment-eleven-server-inky.vercel.app/order',{
             method: 'POST',
             headers: {
                 'content-type' :'application/json'
@@ -36,7 +36,7 @@ const Purchase = () => {
         })
         .then(res=> res.json())
         .then(data => {
-            console.log(data)
+            // console.log(data)
             if(data.insertedId){
                 Swal.fire({
                     title: 'Success!',

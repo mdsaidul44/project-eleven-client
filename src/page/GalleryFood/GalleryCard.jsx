@@ -3,7 +3,7 @@ import { useEffect } from "react";
 
 
 const GalleryCard = ({ food }) => {
-    console.log(food)
+    // console.log(food)
     const { food_img } = food
 
     useEffect(()=>{

@@ -14,16 +14,16 @@ const OrderFoodItems = () => {
         document.title  = "Home | Order Food"
     },[]) 
 
-    console.log(orders)
+    // console.log(orders)
     useEffect(()=>{
-        fetch(`http://localhost:5000/order/${user?.email}`)
+        fetch(`https://my-assignment-eleven-server-inky.vercel.app/order/${user?.email}`)
         .then(res => res.json())
         .then(data=> setOrders(data))
     },[user])
 
 
     const handleDelete = (id)=>{
-        console.log(id)
+        // console.log(id)
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -34,12 +34,12 @@ const OrderFoodItems = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if( result.isConfirmed){
-                fetch(`http://localhost:5000/order/${id}`, {
+                fetch(`https://my-assignment-eleven-server-inky.vercel.app/order/${id}`, {
                     method: 'DELETE'
                 })
                 .then( res => res.json())
                 .then(data=>{
-                    console.log(data)
+                    // console.log(data)
                     if(data.deletedCount>0){
                         Swal.fire({
                             title: "Deleted!",

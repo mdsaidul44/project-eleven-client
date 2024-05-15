@@ -1,7 +1,7 @@
 
 
 const AddedFoodCard = ({ food }) => {
-    console.log(food)
+    // console.log(food)
     const { food_name, food_category, price, photo,description } = food;
     return (
         <div>

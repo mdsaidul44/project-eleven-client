@@ -30,11 +30,11 @@ const Login = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email,password)
+        // console.log(email,password)
 
         try{
-            const userData = await loginUser(email,password)
-            console.log(userData)
+            await loginUser(email,password)
+            
             toast.success('User Login Successfully')
             navigate('/')
         }catch(err){
