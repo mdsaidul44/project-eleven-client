@@ -29,7 +29,7 @@ const OrderUpdate = () => {
         const updateOrder ={foodName,price,quantity,buyerName,date,img,}
         // console.log(updateOrder)
 
-        fetch(`https://my-assignment-eleven-server-inky.vercel.app/orderupdate/${_id}`, {
+        fetch(`http://localhost:5000/orderupdate/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

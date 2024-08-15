@@ -9,6 +9,7 @@ const Home = () => {
     useEffect(()=>{
         document.title  = "Home | Home"
     },[])
+    
     return (
         <div>
            <div>

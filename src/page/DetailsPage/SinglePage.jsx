@@ -12,7 +12,7 @@ const SinglePage = () => {
         document.title  = "Home | Food Details"
     },[])
     return (
-        <div>
+        <div className="mt-20">
             <div className="lg:flex lg:h-[420px]  rounded-xl p-4 bg-gray-200">
                 <div className="relative lg:w-1/2">
                     <div className="">

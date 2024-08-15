@@ -9,7 +9,7 @@ const SectionOne = () => {
         <div className="bg-gray-200 rounded-xl p-10  mt-20 ">
             <div className='text-center'>
                 <h1  data-aos="fade-right"  data-aos-duration="1000" className="text-3xl font-bold mb-5">Best Foods</h1>
-                <p  data-aos="fade-left"  data-aos-duration="1000"  className="font-semibold">Pizza - A classic dish consisting of a thin or thick crust topped with tomato sauce, melted cheese, and various  <br /> toppings such as pepperoni, mushrooms, onions, or peppers. Its loved for its versatility, delicious flavors, <br /> and comforting appeal, making it a favorite among people of all ages around the world.</p>
+                <p   className="font-semibold">Pizza - A classic dish consisting of a thin or thick crust topped with tomato sauce, melted cheese, and various  <br /> toppings such as pepperoni, mushrooms, onions, or peppers. Its loved for its versatility, delicious flavors, <br /> and comforting appeal, making it a favorite among people of all ages around the world.</p>
             </div>
             <div className="lg:flex my-20">
                 <div className="lg:w-1/2">
