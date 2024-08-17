@@ -12,8 +12,8 @@ const GalleryCard = ({ food }) => {
     return (
         <div>
             <div   data-aos="fade-up"   data-aos-duration='1000'  className="card w-76 h-60 bg-base-100 shadow-xl image-full">
-                <figure><img className="w-full" src={food_img} alt="Shoes" /></figure>
-                <div className="card-body">
+                <figure><img className="w-full object-cover" src={food_img} alt="Shoes" /></figure>
+                <div className="card-body bg-black bg-opacity-30 flex opacity-0 hover:opacity-100 transition-opacity rounded-2xl">
                     <h2 className="card-title">Shoes!</h2>
                     <p>If a dog chews shoes whose shoes does he choose?</p>
                     <div className="card-actions justify-end">
@@ -42,3 +42,16 @@ const GalleryCard = ({ food }) => {
 };
 
 export default GalleryCard;
+
+// <div class="grid grid-cols-3 gap-4">
+// <div class="relative">
+// <img src="image1.jpg" alt="User Image 1" class="w-full h-full object-cover rounded-lg">
+// <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg">
+//     <div class="text-center text-white">
+//         <p class="font-bold">User Name</p>
+//         <p>User Feedback</p>
+//     </div>
+// </div>
+// </div>
+// <!-- Repeat the above block for each image -->
+// </div>

@@ -12,7 +12,7 @@ const TopFoodCard = ({ food }) => {
         Aos.init();
     },[])
     return (
-        <div > 
+        <div> 
             <div data-aos="fade-up-right" data-aos-duration="1000" className="card w-96 bg-base-300 shadow-xl">
                 <figure><img className="w-full relative h-72" src={food_img} alt="Shoes" /></figure>
                 <div className="card-body">
