@@ -16,7 +16,7 @@ const OrderFoodItems = () => {
 
     // console.log(orders)
     useEffect(()=>{
-        fetch(`http://localhost:5000/order/${user?.email}`)
+        fetch(`https://my-assignment-eleven-server-inky.vercel.app/order/${user?.email}`)
         .then(res => res.json())
         .then(data=> setOrders(data))
     },[user])
@@ -34,7 +34,7 @@ const OrderFoodItems = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if( result.isConfirmed){
-                fetch(`http://localhost:5000/order/${id}`, {
+                fetch(`https://my-assignment-eleven-server-inky.vercel.app/order/${id}`, {
                     method: 'DELETE'
                 })
                 .then( res => res.json())

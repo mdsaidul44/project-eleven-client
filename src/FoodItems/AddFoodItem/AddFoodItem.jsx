@@ -27,7 +27,7 @@ const AddFoodItem = () => {
         // console.log(added)
 
         // send data to the server side
-        fetch('http://localhost:5000/another', {
+        fetch('https://my-assignment-eleven-server-inky.vercel.app/another', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
