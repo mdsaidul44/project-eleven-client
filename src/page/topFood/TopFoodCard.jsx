@@ -7,7 +7,7 @@ import 'aos/dist/aos.css'
 
 const TopFoodCard = ({ food }) => {
     const { _id, food_img, food_category, price, food_name } = food
-
+   
     useEffect(()=>{
         Aos.init();
     },[])
