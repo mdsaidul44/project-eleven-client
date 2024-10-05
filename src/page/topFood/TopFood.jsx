@@ -10,7 +10,7 @@ const TopFood = () => {
     const [foods, setFoods] = useState([])
     // console.log(foods)
     useEffect(() => {
-        fetch('http://localhost:5000/food')
+        fetch('https://my-assignment-eleven-server-inky.vercel.app/food')
             .then(res => res.json())
             .then(data => setFoods(data))
     }, [])

@@ -27,7 +27,7 @@ const Purchase = () => {
         const order = {foodName:food_name,img:food_img,price:price,email,quantity,buyerName,date}
         // console.log(order)
 
-        fetch('http://localhost:5000/order',{
+        fetch('https://my-assignment-eleven-server-inky.vercel.app/order',{
             method: 'POST',
             headers: {
                 'content-type' :'application/json'
